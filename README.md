@@ -24,7 +24,7 @@ TODO: Check how to enable ```Keep-Alive``` for ```japronto```.
 
 ## How to collect results:
 
-After starting each container, I am using ```ab``` command to check spped of each service.
+After starting each container, I am using the ```ab``` shell command to run stress test agains each service.
 
 ```
 ab -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
