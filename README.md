@@ -26,10 +26,10 @@ TODO: Check how to enable ```Keep-Alive``` for ```japronto```.
 
 After starting each container, I am using ```ab``` command to check spped of each service.
 
-``
+```
 ab -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
 ab -k -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
-``
+```
 
 ## Relevant links
 
