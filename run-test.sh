@@ -9,6 +9,9 @@ for NAME in "${DIRS[@]}"; do
   sleep 1
   curl localhost:8080/hello
   echo
+  ab -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
+  ab -k -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
+  echo
   docker kill $NAME
   sleep 1
 done
