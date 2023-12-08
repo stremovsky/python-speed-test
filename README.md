@@ -7,7 +7,7 @@ Simple "Hellow world" speed test implemented in python using popular web librari
 
 Little known to me ```japronto``` gives the best results.
 
-TODO: Ch3ck how to enable Keep-Alive for japronto.
+TODO: Check how to enable ```Keep-Alive``` for ```japronto```.
 
 
 | Web library | Requests per second | + Keep-Alive    |
@@ -21,3 +21,18 @@ TODO: Ch3ck how to enable Keep-Alive for japronto.
 | bottle | 1166 | 977 |
 | fastapi | 885 | 886 |
 | flask | 717| 720 |
+
+## How to collect results:
+
+After starting each container, I am using ```ab``` command to check spped of each service.
+
+``
+ab -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
+ab -k -c 10 -n 10000 http://localhost:8080/hello 2>/dev/null | grep "Requests per second"
+``
+
+## Relevant links
+
+- https://www.techempower.com/benchmarks/
+- https://wiki.python.org/moin/WebFrameworks
+
